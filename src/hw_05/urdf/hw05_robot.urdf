@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<robot name="hw05_rob">
+    <link name="base_link">
+        <visual>
+            <origin xyz=" 0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.4 0.3 0.02" />
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+    <link name="leftfront_motor_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder length="0.05" radius="0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="leftfront_base_motor_joint" type="fixed">
+        <origin xyz="0.15 0.15 -0.01" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="leftfront_motor_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+
+    <joint name="leftfront_motor_wheel_joint" type="continuous">
+        <origin xyz="0 0.03 0" rpy="0 0 0"/>
+        <parent link="leftfront_motor_link"/>
+        <child link="leftfront_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="leftfront_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length = "0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+
+
+    <link name="rightfront_motor_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder length="0.05" radius="0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="rightfront_base_motor_joint" type="fixed">
+        <origin xyz="0.15 -0.15 -0.01" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="rightfront_motor_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+
+    <joint name="rightfront_motor_wheel_joint" type="continuous">
+        <origin xyz="0 -0.03 0" rpy="0 0 0"/>
+        <parent link="rightfront_motor_link"/>
+        <child link="rightfront_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="rightfront_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length = "0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <link name="leftback_motor_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+        <geometry>
+            <cylinder length="0.05" radius="0.01"/>
+        </geometry>
+        <material name="white">
+            <color rgba="1 1 1 1"/>
+        </material>
+        </visual>
+    </link>
+    <joint name="leftback_base_motor_joint" type="fixed">
+        <origin xyz="-0.15 0.15 -0.01" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="leftback_motor_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+
+    <joint name="leftback_motor_wheel_joint" type="continuous">
+        <origin xyz="0 0.03 0" rpy="0 0 0"/>
+        <parent link="leftback_motor_link"/>
+        <child link="leftback_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="leftback_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length = "0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+
+
+    <link name="rightback_motor_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder length="0.05" radius="0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="rightback_base_motor_joint" type="fixed">
+        <origin xyz="-0.15 -0.15 -0.01" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="rightback_motor_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+
+    <joint name="rightback_motor_wheel_joint" type="continuous">
+        <origin xyz="0 -0.03 0" rpy="0 0 0"/>
+        <parent link="rightback_motor_link"/>
+        <child link="rightback_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="rightback_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length = "0.01"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+
+
+    <link name="kinect_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+            <geometry>
+                <mesh filename="package://hw_05/meshes/kinect.dae" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="kinect_joint" type="fixed">
+        <origin xyz="0.15 0 0.03" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="kinect_link"/>
+    </joint>
+</robot>

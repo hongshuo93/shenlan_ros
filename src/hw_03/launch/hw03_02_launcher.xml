@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+    <node pkg="hw_03" type="hw03_02_node" name="hw03_02_node" output="screen"/>
+</launch>

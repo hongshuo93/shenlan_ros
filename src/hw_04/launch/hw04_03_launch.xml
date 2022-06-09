@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="hw_04" type="hw04_03_br" name="hw04_03_br" output="screen"/>
+    <node pkg="hw_04" type="hw04_03_print" name="hw04_03_print" output="screen"/>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+
+	<node name="hw_08" pkg="robot_voice" type="iat_publish" output="screen"/>
+
+
+</launch>

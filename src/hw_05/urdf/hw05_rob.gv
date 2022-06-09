@@ -1,0 +1,32 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"kinect_link" [label="kinect_link"];
+"leftback_motor_link" [label="leftback_motor_link"];
+"leftback_wheel_link" [label="leftback_wheel_link"];
+"leftfront_motor_link" [label="leftfront_motor_link"];
+"leftfront_wheel_link" [label="leftfront_wheel_link"];
+"rightback_motor_link" [label="rightback_motor_link"];
+"rightback_wheel_link" [label="rightback_wheel_link"];
+"rightfront_motor_link" [label="rightfront_motor_link"];
+"rightfront_wheel_link" [label="rightfront_wheel_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "kinect_joint" [label="xyz: 0.15 0 0.03 \nrpy: 0 -0 0"]
+"kinect_joint" -> "kinect_link"
+"base_link" -> "leftback_base_motor_joint" [label="xyz: -0.15 0.15 -0.01 \nrpy: 0 -0 0"]
+"leftback_base_motor_joint" -> "leftback_motor_link"
+"leftback_motor_link" -> "leftback_motor_wheel_joint" [label="xyz: 0 0.03 0 \nrpy: 0 -0 0"]
+"leftback_motor_wheel_joint" -> "leftback_wheel_link"
+"base_link" -> "leftfront_base_motor_joint" [label="xyz: 0.15 0.15 -0.01 \nrpy: 0 -0 0"]
+"leftfront_base_motor_joint" -> "leftfront_motor_link"
+"leftfront_motor_link" -> "leftfront_motor_wheel_joint" [label="xyz: 0 0.03 0 \nrpy: 0 -0 0"]
+"leftfront_motor_wheel_joint" -> "leftfront_wheel_link"
+"base_link" -> "rightback_base_motor_joint" [label="xyz: -0.15 -0.15 -0.01 \nrpy: 0 -0 0"]
+"rightback_base_motor_joint" -> "rightback_motor_link"
+"rightback_motor_link" -> "rightback_motor_wheel_joint" [label="xyz: 0 -0.03 0 \nrpy: 0 -0 0"]
+"rightback_motor_wheel_joint" -> "rightback_wheel_link"
+"base_link" -> "rightfront_base_motor_joint" [label="xyz: 0.15 -0.15 -0.01 \nrpy: 0 -0 0"]
+"rightfront_base_motor_joint" -> "rightfront_motor_link"
+"rightfront_motor_link" -> "rightfront_motor_wheel_joint" [label="xyz: 0 -0.03 0 \nrpy: 0 -0 0"]
+"rightfront_motor_wheel_joint" -> "rightfront_wheel_link"
+}
