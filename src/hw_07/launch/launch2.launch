@@ -4,9 +4,11 @@
     <remap from="image" to="/usb_cam_node/image_raw"/>
 	</node>
 
-  <node pkg="usb_cam" type="usb_cam_node" name="usb_cam_node" output="screen">
-    <param name="pixel_format" value="yuyv"/>
-    <param name="video_device" value="/dev/video0"/>
+  <param name="video_path" type="string" value="/home/sun/2022-06-10 00-33-31.mp4" />
+
+  <node pkg= "tensorflow_object_detector" name="video_to_camera" type="video_to_camera.py"  output="screen">
+    <remap from="/usb_cam/image_raw" to="/usb_cam_node/image_raw"/>
+    
   </node>
 
   <node pkg="image_view" type="image_view" name="image_view">

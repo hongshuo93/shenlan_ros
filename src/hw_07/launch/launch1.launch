@@ -1,13 +1,8 @@
 <launch>
-
-  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video0" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="io_method" value="mmap"/>
+  <param name="video_path" type="string" value="/home/sun/2022-06-10 00-33-31.mp4" />
+  <node pkg= "tensorflow_object_detector" name="video_to_camera" type="video_to_camera.py"  output="screen"> 
   </node>
+
   <node name="node1" pkg="hw_07" type="node1"/>
     <node pkg="robot_vision" name="face_detector" type="face_detector.py" output="screen">
     <remap from="input_rgb_image" to="/usb_cam/image_raw" />
