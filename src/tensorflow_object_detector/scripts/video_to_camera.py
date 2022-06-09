@@ -28,7 +28,7 @@ def main(args):
     while(not rospy.is_shutdown()):
         ret, cv_frame = cap.read() 
         if not ret:
-            print('no video')
+            print('loop video')
             cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
             continue
         cv_frame = cv2.resize(cv_frame,(640,480))
